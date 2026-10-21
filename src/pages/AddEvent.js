@@ -18,11 +18,17 @@ const AddEvent = ({ onAddEvent }) => {
       return;
     }
 
+    const capNum = Number(capacity);
+    if (!Number.isInteger(capNum) || capNum < 10 || capNum > 1000) {
+      setErrorMessage("Sức chứa phải từ 10 đến 1000");
+      return;
+    }
+
     onAddEvent({
       name,
       location,
       date,
-      capacity: Number(capacity),
+      capacity: capNum,
     });
 
     navigate("/events", { replace: true });

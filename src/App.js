@@ -12,7 +12,6 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  
   useEffect(() => {
     const savedEvents = localStorage.getItem("gk_events");
     if (savedEvents) {
@@ -40,14 +39,12 @@ const App = () => {
     };
   }, []);
 
-  
   useEffect(() => {
     if (!loading) {
       localStorage.setItem("gk_events", JSON.stringify(events));
     }
   }, [events, loading]);
 
-  
   const handleRegister = (id) => {
     setEvents((prevEvents) =>
       prevEvents.map((evt) =>
@@ -58,12 +55,10 @@ const App = () => {
     );
   };
 
-  
   const handleDelete = (id) => {
     setEvents((prevEvents) => prevEvents.filter((evt) => evt.id !== id));
   };
 
- 
   const handleAddEvent = (newEvent) => {
     const maxId = events.length > 0 ? Math.max(...events.map((e) => e.id)) : 0;
     const eventToAdd = {

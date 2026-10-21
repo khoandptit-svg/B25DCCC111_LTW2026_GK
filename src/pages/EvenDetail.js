@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import Countdown from "../components/CountDown";
 
 const EventDetail = ({ events }) => {
   const { id } = useParams();
@@ -19,6 +20,7 @@ const EventDetail = ({ events }) => {
       <div>
         Số chỗ: {event.registered}/{event.capacity}
       </div>
+      <Countdown date={event.date} />
       <button onClick={() => navigate(-1)}>Quay lại</button>
     </div>
   );
