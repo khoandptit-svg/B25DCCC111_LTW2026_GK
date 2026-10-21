@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import FilterBar from "../components/Filterbar";
+import FilterBar from "../components/FilterBar";
 import EventTable from "../components/EventTable";
 
 const EventList = ({ events, onRegister, onDelete }) => {
