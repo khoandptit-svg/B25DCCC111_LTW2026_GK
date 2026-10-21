@@ -68,3 +68,10 @@ form label {
   width: 120px;
 }
 
+.filter-bar {
+  margin-bottom: 15px;
+}
+
+.filter-bar label {
+  margin-right: 15px;
+}
